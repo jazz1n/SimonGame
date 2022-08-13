@@ -58,6 +58,7 @@ function checkAnswer(currentLevel) {
       $("body").removeClass("game-over");
     }, 200);
     level=0;
+    gamePattern=[];
     started = false;
   }
 }

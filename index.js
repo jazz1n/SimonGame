@@ -14,7 +14,6 @@ $(document).on("keydown", function() {
 $(".btn").on("click", function() {
   var userChosenColor = $(this).attr("id");
   userClickedPattern.push(userChosenColor);
-  console.log("user= " + userClickedPattern);
   checkAnswer(userClickedPattern.length - 1);
 })
 
@@ -23,7 +22,6 @@ function nextSequence() {
   var randomNumber = Math.floor(Math.random() * 3);
   var randomChosenColor = buttonColors[randomNumber];
   gamePattern.push(randomChosenColor);
-  console.log("game= " + gamePattern);
   animatePress(randomChosenColor);
   playSound(randomChosenColor);
   level++;
@@ -52,7 +50,6 @@ function checkAnswer(currentLevel) {
       }, 1000);
     }
   } else {
-    console.log(false);
     animatePress(userClickedPattern[currentLevel]);
     playSound("wrong");
     $("body").addClass("game-over");
